@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vietword-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/server.js
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: "*"
+      - key: MONGODB_URI
+        sync: false # Sẽ nhập tay trên Render Dashboard
+
